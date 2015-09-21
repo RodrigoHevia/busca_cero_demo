@@ -19,3 +19,11 @@ plt.plot(x_values, np.cos(x_values), label='cos(x)')
 plt.xlabel('x [radianes]')
 plt.legend()
 plt.show()
+
+def biseccion(func, a, b):
+	'''
+	Recibe una funcion y dos puntos en lados
+	opuestos a una raiz, y encuentra la raiz
+	usando el metodo de la biseccion.
+	'''
+	pass
