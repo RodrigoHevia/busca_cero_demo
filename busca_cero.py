@@ -42,5 +42,10 @@ def seno_menos_coseno(x):
 	return np.sin(x) - np.cos(x)
 
 raiz = biseccion(seno_menos_coseno, 0, 2)
-plt.axvline(raiz)
+plt.axvline(raiz, color='r')
+
+from scipy.optimize import bisect
+
+raiz_bisect = bisect(seno_menos_coseno, 0, 2)
+plt.axvline(raiz_bisect, color='g')
 plt.show()
