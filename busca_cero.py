@@ -48,4 +48,4 @@ from scipy.optimize import bisect
 
 raiz_bisect = bisect(seno_menos_coseno, 0, 2)
 plt.axvline(raiz_bisect, color='g')
-plt.show()
+plt.savefig('raices.png')
