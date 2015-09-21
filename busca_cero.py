@@ -19,19 +19,23 @@ plt.plot(x_values, np.cos(x_values), label='cos(x)')
 plt.xlabel('x [radianes]')
 plt.legend()
 
-def biseccion(func, a, b):
+def biseccion(func, a, b, max_iter=40):
 	'''
 	Recibe una funcion y dos puntos en lados
 	opuestos a una raiz, y encuentra la raiz
 	usando el metodo de la biseccion.
 	'''
 	p = (a + b) / 2.
-	if func(p) == 0:
-		return p
-	if func(a) * func(p) > 0:
-		a = p
-	else:
-		b = p
+	counter = 1
+	while counter < max_iter:
+		if func(p) == 0:
+			return p
+		if func(a) * func(p) > 0:
+			a = p
+		else:
+			b = p
+		p = (a + b) / 2.
+		counter += 1
 	return p
 
 def seno_menos_coseno(x):
