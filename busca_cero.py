@@ -19,7 +19,7 @@ plt.plot(x_values, np.cos(x_values), label='cos(x)')
 plt.xlabel('x [radianes]')
 plt.legend()
 
-def biseccion(func, a, b, max_iter=40):
+def biseccion(func, a, b, eps=0.01, max_iter=40):
 	'''
 	Recibe una funcion y dos puntos en lados
 	opuestos a una raiz, y encuentra la raiz
@@ -27,7 +27,7 @@ def biseccion(func, a, b, max_iter=40):
 	'''
 	p = (a + b) / 2.
 	counter = 1
-	while counter < max_iter:
+	while (np.fabs(func(p)) >= eps) | (counter < max_iter):
 		if func(p) == 0:
 			return p
 		if func(a) * func(p) > 0:
