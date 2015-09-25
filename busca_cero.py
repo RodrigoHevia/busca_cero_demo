@@ -48,4 +48,13 @@ from scipy.optimize import bisect
 
 raiz_bisect = bisect(seno_menos_coseno, 0, 2)
 plt.axvline(raiz_bisect, color='g')
-plt.savefig('raices.png')
+# plt.savefig('raices.png')
+
+from scipy.optimize import newton
+
+raiz_newton = newton(seno_menos_coseno, 2.32)
+plt.axvline(raiz_newton, color='b')
+
+
+plt.draw()
+plt.show()
