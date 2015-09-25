@@ -52,9 +52,13 @@ plt.axvline(raiz_bisect, color='g')
 
 from scipy.optimize import newton
 
-raiz_newton = newton(seno_menos_coseno, 2.32)
+raiz_newton = newton(seno_menos_coseno, 0)
 plt.axvline(raiz_newton, color='b')
 
+
+from scipy.optimize import brentq
+raiz_brent = brentq(seno_menos_coseno, 0, 2)
+plt.axvline(raiz_brent, color='y')
 
 plt.draw()
 plt.show()
